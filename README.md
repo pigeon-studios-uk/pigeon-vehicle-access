@@ -4,14 +4,14 @@
   <p><strong>Decide who can drive which vehicles, by job, grade, gang, ACE permission or whitelist, for Qbox and QBCore.</strong></p>
 
   <p>
-    <a href="https://github.com/WelshPigeon/pigeon-vehicle-access/releases/latest"><img src="https://img.shields.io/github/v/release/WelshPigeon/pigeon-vehicle-access?label=release&color=2ea043" alt="Latest release" /></a>
+    <a href="https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/latest"><img src="https://img.shields.io/github/v/release/pigeon-studios-uk/pigeon-vehicle-access?label=release&color=2ea043" alt="Latest release" /></a>
     <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-Pigeon%20Studios%20Free-6f42c1" alt="Licence: Pigeon Studios Free Licence" /></a>
     <a href="https://discord.gg/2NFVWEUmDF"><img src="https://img.shields.io/badge/support-Discord-5865F2?logo=discord&logoColor=white" alt="Discord support" /></a>
     <img src="https://img.shields.io/badge/FiveM-resource-F40552" alt="FiveM resource" />
   </p>
 
   <p>
-    <a href="https://github.com/WelshPigeon/pigeon-vehicle-access/releases/latest"><strong>Download</strong></a> ·
+    <a href="https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/latest"><strong>Download</strong></a> ·
     <a href="#installation">Install</a> ·
     <a href="#setting-up-vehicles">Set up vehicles</a> ·
     <a href="CHANGELOG.md">Changelog</a> ·
@@ -90,7 +90,7 @@ Getting out, moving to a passenger seat, or being given access (a promotion, goi
 
 ## Installation
 
-1. **Download** `pigeon-vehicle-access.zip` from the [latest release](https://github.com/WelshPigeon/pigeon-vehicle-access/releases/latest).
+1. **Download** `pigeon-vehicle-access.zip` from the [latest release](https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/latest).
 2. **Extract** it into your `resources` folder. The folder must be called `pigeon-vehicle-access`.
 3. **Set up your vehicles** in `configuration/config.lua` (see the next section).
 4. **Start it** after oxmysql and your framework:
@@ -271,7 +271,7 @@ Set `Config.Locale` to a file in `locales/`. To add a language, copy `locales/en
 
 ## Update checker
 
-When it starts, Vehicle Access checks our public [version registry](https://github.com/WelshPigeon/pigeon-versions) once and prints one line in the server console. It sends nothing about your server. Control it for every Pigeon Studios resource in `server.cfg`:
+When it starts, Vehicle Access checks our public [version registry](https://github.com/pigeon-studios-uk/pigeon-versions) once and prints one line in the server console. It sends nothing about your server. Control it for every Pigeon Studios resource in `server.cfg`:
 
 ```cfg
 set pigeon_update_check "on"      # default
@@ -290,7 +290,7 @@ The server's check takes a few native calls per player each second, and does mor
 - **Bypass-resistant.** Drivers who ignore the instruction are taken out by the server.
 - **Parameterised queries only**, tested against MariaDB, including with quotes in input.
 
-Please report security problems privately: use the **Report a vulnerability** button in this repository's **Security** tab, or follow our [Security Policy](https://github.com/WelshPigeon/.github/blob/main/SECURITY.md).
+Please report security problems privately: use the **Report a vulnerability** button in this repository's **Security** tab, or follow our [Security Policy](https://github.com/pigeon-studios-uk/.github/blob/main/SECURITY.md).
 
 ## Troubleshooting
 
@@ -322,11 +322,11 @@ Not yet. ACE and whitelist rules work on any server; job and gang rules need Qbo
 
 ## Support
 
-Read [Troubleshooting](#troubleshooting) first, then ask in the support channels of our [Discord](https://discord.gg/2NFVWEUmDF). See [Getting help](https://github.com/WelshPigeon/.github/blob/main/SUPPORT.md).
+Read [Troubleshooting](#troubleshooting) first, then ask in the support channels of our [Discord](https://discord.gg/2NFVWEUmDF). See [Getting help](https://github.com/pigeon-studios-uk/.github/blob/main/SUPPORT.md).
 
 ## Contributing
 
-Fixes and improvements are welcome. Please read the [contributing guide](https://github.com/WelshPigeon/.github/blob/main/CONTRIBUTING.md) first.
+Fixes and improvements are welcome. Please read the [contributing guide](https://github.com/pigeon-studios-uk/.github/blob/main/CONTRIBUTING.md) first.
 
 ```bash
 lua tests/rules.test.lua
