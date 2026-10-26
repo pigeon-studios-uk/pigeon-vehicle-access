@@ -60,3 +60,4 @@ docs/INTERNAL.md  export-ignore
 # Development files, not needed on a server.
 tests/           export-ignore
 .gitlab-ci.yml   export-ignore
+.gitleaks.toml   export-ignore

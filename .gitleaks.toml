@@ -1,0 +1,9 @@
+# Gitleaks settings for the shared "secrets" check (https://gitlab.com/pigeon-studios/tools/ci-templates).
+# Uses Gitleaks' own rules, with one exception below.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "The tests use a made-up Discord ID, which looks like a Discord client ID."
+regexes = ['''^123456789012345678$''']
