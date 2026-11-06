@@ -5,7 +5,7 @@ lua54 'yes'
 name 'pigeon-vehicle-access'
 author 'Pigeon Studios'
 description 'Decide who can drive which vehicles, by job, grade, gang, ACE permission or whitelist, for Qbox and QBCore.'
-version '1.0.0'
+version '1.0.1'
 repository 'https://github.com/pigeon-studios-uk/pigeon-vehicle-access'
 
 -- Pigeon Studios version registry entry, read by server/version_check.lua.

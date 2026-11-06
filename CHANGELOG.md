@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-06
+
 ### Changed
 
 - Links, badges and the update checker's registry address now point to the Pigeon Studios GitHub organisation, [pigeon-studios-uk](https://github.com/pigeon-studios-uk). Old WelshPigeon links still redirect, and copies already installed keep working.
@@ -46,5 +48,6 @@ First release. Pigeon Vehicle Access replaces Vehicle Lock (`vehicle-lock`).
 - Whitelists use the standard oxmysql. Vehicle Lock needed a renamed copy of it.
 - Vehicles are made driveable again when a stopped player gets out. In Vehicle Lock they could stay undriveable for the next driver.
 
-[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/tag/v1.0.1
 [1.0.0]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/tag/v1.0.0
