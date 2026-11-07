@@ -219,7 +219,7 @@ add_ace group.vip vehicle.t20 allow
 
 | Setting | Default | What it does |
 |---|---|---|
-| `Config.Locale` | `'en'` | Language file from `locales/` |
+| `Config.Locale` | `'auto'` | Language: `'auto'` follows ox_lib's language, or a code from `locales/` such as `'de'` |
 | `Config.Vehicles` | examples | Restricted vehicles and who can drive them |
 | `Config.BypassAce` | `'pigeon-vehicle-access.bypass'` | ACE that can drive everything |
 | `Config.Command` | `'vehicleaccess'` | The admin command |
@@ -269,7 +269,19 @@ One table, created on start:
 
 ## Localisation
 
-Set `Config.Locale` to a file in `locales/`. To add a language, copy `locales/en.lua`, rename it with the two-letter code (such as `de.lua`), change `Locales.en` to `Locales.de`, and translate the text in quotes. Keep anything in `{curly brackets}` as it is.
+Pigeon Vehicle Access comes in 23 languages: `en` English, `cs` Czech, `da` Danish, `de` German, `es` Spanish, `et` Estonian, `fi` Finnish, `fr` French, `hr` Croatian, `hu` Hungarian, `id` Indonesian, `it` Italian, `nl` Dutch, `no` Norwegian, `pl` Polish, `pt` Portuguese, `pt-br` Brazilian Portuguese, `ro` Romanian, `sl` Slovenian, `sv` Swedish, `tr` Turkish, `zh-cn` Simplified Chinese and `zh-tw` Traditional Chinese. They're the languages ox_lib ships, so your server may already have one set.
+
+With `Config.Locale = 'auto'` (the default), it uses ox_lib's language, so one line in `server.cfg` sets it for this and every other resource that follows ox_lib:
+
+```cfg
+setr ox:locale "de"
+```
+
+Use `setr`, not `set`, so players' games get it too. Without it, or for a language that isn't in `locales/`, the text is English. To choose a language for this resource only, set `Config.Locale` to its code, such as `'fr'` or `'pt-br'`.
+
+Chinese text can show as blank in GTA's own text, such as its notifications and help messages, because GTA only loads its Chinese font when the game itself is set to Chinese. ox_lib's notifications show every language.
+
+Every file was checked for missing text and placeholders, but not every translation has been read by a native speaker yet. If something reads wrong, please send a fix; see [Contributing](#contributing). To add a language, copy `locales/en.lua` to a new file named with the language's code (such as `ja.lua`), change `Locales.en` at the top to match (`Locales.ja`), and translate the text in quotes. Keep anything in `{curly brackets}` as it is.
 
 ## Update checker
 

@@ -16,7 +16,9 @@ local EVENT_RELEASE = RESOURCE .. ':client:release'
 local MOVING_SPEED = 2.0             -- metres per second; above this the vehicle counts as being driven
 local LEAVE_FLAGS = 16               -- TaskLeaveVehicle: put them straight outside
 
-local strings = Locales[Config.Locale] or Locales.en
+-- 'auto' follows ox_lib's language (the ox:locale convar), and English when that isn't set.
+local locale = Config.Locale == 'auto' and GetConvar('ox:locale', 'en') or Config.Locale
+local strings = Locales[locale] or Locales.en
 local rules, problems = Rules.compile(Config.Vehicles)
 local ready = false
 local framework
