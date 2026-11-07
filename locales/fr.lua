@@ -49,7 +49,7 @@ Locales.fr = {
 
     -- Console
     started = 'Surveillance de {count} véhicules restreints avec {framework}.',
-    no_framework = 'Ni qbx_core ni qb-core n\'est lancé, donc les règles de métiers et de gangs ne peuvent pas être vérifiées. Les règles ACE et de whitelist fonctionnent toujours.',
+    no_framework = 'Aucun framework n\'est lancé (qbx_core, qb-core ou es_extended), donc les règles de métiers et de gangs ne peuvent pas être vérifiées. Les règles ACE et de whitelist fonctionnent toujours.',
     config_problem = 'Problème dans la config: {problem}',
     bypass_attempt = 'Le joueur {id} ({name}) a continué à conduire {model} après avoir été arrêté, il en a donc été sorti.',
 }

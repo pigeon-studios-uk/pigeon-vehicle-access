@@ -49,7 +49,7 @@ Locales.pl = {
 
     -- Console
     started = 'Pilnuję {count} pojazdów z ograniczeniami przez {framework}.',
-    no_framework = 'Nie działa ani qbx_core, ani qb-core, więc zasad dla prac i gangów nie da się sprawdzić. Zasady ACE i whitelisty nadal działają.',
+    no_framework = 'Nie działa żaden framework (qbx_core, qb-core ani es_extended), więc zasad dla prac i gangów nie da się sprawdzić. Zasady ACE i whitelisty nadal działają.',
     config_problem = 'Problem w configu: {problem}',
     bypass_attempt = 'Gracz {id} ({name}) jechał dalej pojazdem {model} po zatrzymaniu, więc został z niego wyciągnięty.',
 }

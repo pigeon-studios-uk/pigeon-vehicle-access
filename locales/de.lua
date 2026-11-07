@@ -49,7 +49,7 @@ Locales.de = {
 
     -- Console
     started = 'Überwache {count} eingeschränkte Fahrzeuge mit {framework}.',
-    no_framework = 'Weder qbx_core noch qb-core läuft, daher können Job- und Gang-Regeln nicht geprüft werden. ACE- und Whitelist-Regeln funktionieren weiter.',
+    no_framework = 'Es läuft kein Framework (qbx_core, qb-core oder es_extended), daher können Job- und Gang-Regeln nicht geprüft werden. ACE- und Whitelist-Regeln funktionieren weiter.',
     config_problem = 'Problem in der Config: {problem}',
     bypass_attempt = 'Spieler {id} ({name}) ist mit {model} weitergefahren, nachdem er gestoppt wurde, und wurde deshalb herausgeholt.',
 }

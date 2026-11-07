@@ -49,7 +49,7 @@ Locales.cs = {
 
     -- Console
     started = 'Hlídám {count} omezených vozidel s {framework}.',
-    no_framework = 'Neběží qbx_core ani qb-core, takže pravidla pro práce a gangy nejde ověřit. Pravidla ACE a whitelistu fungují dál.',
+    no_framework = 'Neběží žádný framework (qbx_core, qb-core nebo es_extended), takže pravidla pro práce a gangy nejde ověřit. Pravidla ACE a whitelistu fungují dál.',
     config_problem = 'Problém v konfiguraci: {problem}',
     bypass_attempt = 'Hráč {id} ({name}) jel dál s {model} i poté, co byl zastaven, takže byl z vozidla vyhozen.',
 }

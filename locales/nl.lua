@@ -49,7 +49,7 @@ Locales.nl = {
 
     -- Console
     started = '{count} beperkte voertuigen worden gevolgd met {framework}.',
-    no_framework = 'qbx_core en qb-core draaien geen van beide, dus regels voor banen en gangs kunnen niet worden gecontroleerd. ACE- en whitelistregels werken nog wel.',
+    no_framework = 'Er draait geen framework (qbx_core, qb-core of es_extended), dus regels voor banen en gangs kunnen niet worden gecontroleerd. ACE- en whitelistregels werken nog wel.',
     config_problem = 'Probleem in de config: {problem}',
     bypass_attempt = 'Speler {id} ({name}) bleef met {model} rijden nadat hij was gestopt, dus is hij eruit gehaald.',
 }

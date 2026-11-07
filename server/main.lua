@@ -201,7 +201,7 @@ AddEventHandler('playerDropped', function()
 end)
 
 -- A different character can have a different whitelist, so forget cached answers when characters change.
-for _, event in ipairs({ 'QBCore:Server:OnPlayerUnload', 'QBCore:Server:PlayerLoaded' }) do
+for _, event in ipairs({ 'QBCore:Server:OnPlayerUnload', 'QBCore:Server:PlayerLoaded', 'esx:playerLoaded', 'esx:playerLogout' }) do
     AddEventHandler(event, function(arg)
         local id = type(arg) == 'table' and arg.PlayerData and arg.PlayerData.source or tonumber(arg) or source
         if id then whitelistCache[id] = nil end

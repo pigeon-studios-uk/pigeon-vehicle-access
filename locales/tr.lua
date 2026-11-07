@@ -49,7 +49,7 @@ Locales.tr = {
 
     -- Console
     started = '{framework} ile {count} kısıtlı araç izleniyor.',
-    no_framework = 'Ne qbx_core ne de qb-core çalışıyor, bu yüzden meslek ve çete kuralları kontrol edilemiyor. ACE ve beyaz liste kuralları çalışmaya devam ediyor.',
+    no_framework = 'Çalışan bir framework yok (qbx_core, qb-core veya es_extended), bu yüzden meslek ve çete kuralları kontrol edilemiyor. ACE ve beyaz liste kuralları çalışmaya devam ediyor.',
     config_problem = 'Config sorunu: {problem}',
     bypass_attempt = 'Oyuncu {id} ({name}) durdurulduktan sonra {model} aracını kullanmaya devam etti, bu yüzden araçtan çıkarıldı.',
 }

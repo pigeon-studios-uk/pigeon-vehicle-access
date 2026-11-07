@@ -3,7 +3,7 @@
 
   <h1>Pigeon Vehicle Access</h1>
 
-  <p><strong>Decide who can drive which vehicles, by job, grade, gang, ACE permission or whitelist, for Qbox and QBCore.</strong></p>
+  <p><strong>Decide who can drive which vehicles, by job, grade, gang, ACE permission or whitelist, for Qbox, QBCore and ESX.</strong></p>
 
   <p>
     <a href="https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/latest"><img src="https://img.shields.io/github/v/release/pigeon-studios-uk/pigeon-vehicle-access?label=release&color=2ea043" alt="Latest release" /></a>
@@ -65,7 +65,7 @@ The server, not the player's game, checks who is driving what, so it can't be sw
 - **Passengers are never affected.** Only the driver's seat is checked.
 - **In-game whitelists.** `/vehicleaccess add c3coqheat 12` whitelists the player with server ID 12. By citizen ID or Discord ID too, with a note of who added them and why.
 - **Changes apply straight away.** Promotions, going on duty and whitelist changes are picked up within a second.
-- **Qbox and QBCore.** Including Qbox's multiple jobs.
+- **Qbox, QBCore and ESX.** Including Qbox's multiple jobs and ESX job duty.
 - **Staff bypass.** One ACE lets admins drive anything.
 - **Exports** for shops and other resources to check access or manage whitelists.
 - **Tested.** Rules, server and client tests, and every database query tested against real MariaDB.
@@ -87,7 +87,7 @@ Getting out, moving to a passenger seat, or being given access (a promotion, goi
 | FXServer | A [recommended artifact](https://runtime.fivem.net/artifacts/) | |
 | OneSync | On | The server needs it to see who is driving |
 | [oxmysql](https://github.com/communityox/oxmysql) | 2.0 or newer | For whitelists |
-| Qbox or QBCore | [qbx_core](https://github.com/Qbox-project/qbx_core) or [qb-core](https://github.com/qbcore-framework/qb-core) | For job and gang rules. ACE and whitelist rules work without either |
+| Qbox, QBCore or ESX | [qbx_core](https://github.com/Qbox-project/qbx_core), [qb-core](https://github.com/qbcore-framework/qb-core) or [es_extended](https://github.com/esx-framework/esx_core) | For job rules, and gang rules on Qbox and QBCore. ACE and whitelist rules work without any of them |
 | [ox_lib](https://github.com/communityox/ox_lib) | Optional | Used for notifications if it's running |
 
 ## Installation
@@ -99,7 +99,7 @@ Getting out, moving to a passenger seat, or being given access (a promotion, goi
 
    ```cfg
    ensure oxmysql
-   ensure qbx_core
+   ensure qbx_core          # or qb-core, or es_extended
    ensure pigeon-vehicle-access
    ```
 
@@ -175,6 +175,8 @@ Someone may drive the vehicle if they match **any** of these. Vehicles not in th
 
 **Qbox players with several jobs:** without `onDuty`, any of their jobs counts. With `onDuty`, it must be the job they're currently clocked into.
 
+**ESX:** a player has one job, and its grade is the number in your `job_grades` table. `onDuty` uses ESX's job duty; on older ESX versions without job duty, everyone counts as on duty. ESX has no gangs, so `gangs` rules never match there: use a job, ACE or whitelist rule instead.
+
 ## Whitelists
 
 Give `whitelist = true` to any vehicle, then manage who's on it in game or from the console:
@@ -187,7 +189,7 @@ Give `whitelist = true` to any vehicle, then manage who's on it in game or from 
 /vehicleaccess list c3coqheat
 ```
 
-Using a server ID whitelists that player's current character by citizen ID. Each entry remembers who added it and when.
+Using a server ID whitelists that player's current character by citizen ID. On ESX that's the character's identifier, such as `char1:2f8a…` with esx_multicharacter. Each entry remembers who added it and when.
 
 ## Commands
 
@@ -199,7 +201,7 @@ Using a server ID whitelists that player's current character by citizen ID. Each
 | `/vehicleaccess check <server ID> <model>` | Says whether a player can drive a vehicle, and why |
 | `/vehicleaccess rules` | Lists every restricted vehicle and who can drive it |
 
-`<who>` is an online server ID, a citizen ID, or `discord:<ID>`. The server console can always use the command; players need the admin ACE.
+`<who>` is an online server ID, a citizen ID (an ESX identifier on ESX), or `discord:<ID>`. The server console can always use the command; players need the admin ACE.
 
 ## Permissions
 
@@ -314,7 +316,7 @@ Check you used the spawn name, not the display name: add-on cars often show a di
 **Officers who should be allowed are stopped.**
 Run `/vehicleaccess check <their ID> <model>`. If the rule has `onDuty = true`, they must be on duty. Grades are numbers: check your job's grade numbers in your framework's shared jobs file.
 
-**"Neither qbx_core nor qb-core is running".**
+**"No framework is running (qbx_core, qb-core or es_extended)".**
 Start your framework before `pigeon-vehicle-access`. Job and gang rules need it.
 
 **Players are taken out of vehicles while parked.**
@@ -332,7 +334,10 @@ Yes. Passengers are never affected, and a driver who isn't allowed can sit in it
 No. It works alongside any vehicle keys resource; it only decides who may drive.
 
 **Does it work with ESX?**
-Not yet. ACE and whitelist rules work on any server; job and gang rules need Qbox or QBCore.
+Yes, from 1.2.0. Job rules, grades and `onDuty` work with es_extended. ESX has no gangs, so gang rules only work on Qbox and QBCore.
+
+**Does it work on a standalone or vMenu server?**
+Yes, with ACE and whitelist rules. Job and gang rules need a framework.
 
 ## Support
 
@@ -365,4 +370,4 @@ This summary isn't the licence; [LICENSE.md](LICENSE.md) is. Third-party notices
 
 Made by [Pigeon Studios](https://pigeonstudios.co.uk).
 
-<sub>Not affiliated with or endorsed by Rockstar Games, Take-Two Interactive, Cfx.re, the Qbox Project or QBCore.</sub>
+<sub>Not affiliated with or endorsed by Rockstar Games, Take-Two Interactive, Cfx.re, the Qbox Project, QBCore or ESX.</sub>

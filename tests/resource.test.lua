@@ -92,6 +92,10 @@ local function newServer(options)
                 return { GetCoreObject = function()
                     return { Functions = { GetPlayer = function(id) local p = s.players[id] return p and p.data and { PlayerData = p.data } end } }
                 end }
+            elseif resource == 'es_extended' then
+                return { getSharedObject = function()
+                    return { GetPlayerFromId = function(id) local p = s.players[tonumber(id)] return p and p.esx end }
+                end }
             end
         end,
     })
@@ -207,6 +211,11 @@ local function newServer(options)
     return s
 end
 
+--- An ESX xPlayer. onDuty is nil on ESX versions without job duty.
+local function esx(job, grade, onDuty, identifier)
+    return { identifier = identifier or 'char1:2f8ab3', job = { name = job, grade = grade, onDuty = onDuty } }
+end
+
 local function qbx(job, grade, onduty, gang, gangGrade, citizenid)
     return {
         citizenid = citizenid or 'CID',
@@ -234,7 +243,7 @@ end
 
 do
     local s = newServer({ resources = {} })
-    check('no framework: explains that only ACE and whitelist rules work', table.concat(s.printed, '\n'):find('Neither qbx_core nor qb%-core') ~= nil)
+    check('no framework: explains that only ACE and whitelist rules work', table.concat(s.printed, '\n'):find('No framework is running %(qbx_core, qb%-core or es_extended%)') ~= nil)
 end
 
 ---------------------------------------------------------------------------
@@ -514,6 +523,49 @@ do
     check('client: the next repeat from the server restarts it', c.undriveable[1] == true and #c.threads == 1)
     c.events['pigeon-vehicle-access:client:enforce']('garbage', 'x')
     check('client: malformed events are ignored', #c.threads == 1)
+end
+
+---------------------------------------------------------------------------
+-- ESX
+
+do
+    local s = newServer({ resources = { es_extended = 'started', oxmysql = 'started' } })
+    check('ESX: detected', table.concat(s.printed, '\n'):find('with ESX') ~= nil, table.concat(s.printed, '\n'))
+
+    s.addVehicle(1, 'police3')
+    s.addPlayer(1, { esx = esx('police', 1, true), vehicle = 1, seat = -1 })
+    s.events = {}
+    s.run(1000)
+    check('ESX: grade below the lowest is stopped', #s.sent(1, ':client:enforce') == 1)
+
+    s.players[1].esx = esx('police', 2, true)
+    s.events = {}
+    s.run(1000)
+    check('ESX: grade is a plain number, and the promotion is picked up', #s.sent(1, ':client:release') == 1)
+
+    s.players[1].esx = esx('police', 2, false)
+    s.events = {}
+    s.run(1000)
+    check('ESX: off duty is stopped when onDuty is required', #s.sent(1, ':client:enforce') == 1)
+
+    s.players[1].esx = esx('police', 2, nil)
+    s.events = {}
+    s.run(1000)
+    check('ESX: older ESX without job duty counts as on duty', #s.sent(1, ':client:release') == 1)
+
+    s.addVehicle(2, 'buffalo4')
+    s.addPlayer(2, { esx = esx('ballas', 5, true), vehicle = 2, seat = -1 })
+    s.events = {}
+    s.run(1000)
+    check('ESX: gang rules never match (ESX has no gangs)', #s.sent(2, ':client:enforce') == 1)
+
+    local out = s.command(0, 'add', 'adder', '2')
+    check('ESX: add by server ID uses the character identifier', out:find('Added char1:2f8ab3 to the adder whitelist') ~= nil and s.whitelist[1].identifier == 'char1:2f8ab3', out)
+
+    out = s.command(0, 'add', 'adder', 'char2:9c41de')
+    check('ESX: an offline character identifier can be added', out:find('Added char2:9c41de') ~= nil, out)
+
+    check('ESX: character load and logout clear the cache', s.handlers['esx:playerLoaded'] ~= nil and s.handlers['esx:playerLogout'] ~= nil)
 end
 
 io.write(('%d passed, %d failed\n'):format(passed, failed))

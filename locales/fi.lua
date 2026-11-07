@@ -49,7 +49,7 @@ Locales.fi = {
 
     -- Console
     started = 'Valvotaan {count} rajoitettua ajoneuvoa ({framework}).',
-    no_framework = 'Kumpikaan qbx_core tai qb-core ei ole käynnissä, joten työ- ja jengisääntöjä ei voi tarkistaa. ACE- ja sallittujen listan säännöt toimivat edelleen.',
+    no_framework = 'Mikään framework ei ole käynnissä (qbx_core, qb-core tai es_extended), joten työ- ja jengisääntöjä ei voi tarkistaa. ACE- ja sallittujen listan säännöt toimivat edelleen.',
     config_problem = 'Ongelma configissa: {problem}',
     bypass_attempt = 'Pelaaja {id} ({name}) jatkoi ajoneuvolla {model} ajamista pysäyttämisen jälkeen, joten hänet poistettiin siitä.',
 }

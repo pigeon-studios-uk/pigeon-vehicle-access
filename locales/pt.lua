@@ -49,7 +49,7 @@ Locales.pt = {
 
     -- Console
     started = 'A vigiar {count} veículos restritos com {framework}.',
-    no_framework = 'Nem qbx_core nem qb-core estão a correr, por isso as regras de empregos e gangues não podem ser verificadas. As regras de ACE e whitelist continuam a funcionar.',
+    no_framework = 'Não está a correr nenhum framework (qbx_core, qb-core ou es_extended), por isso as regras de empregos e gangues não podem ser verificadas. As regras de ACE e whitelist continuam a funcionar.',
     config_problem = 'Problema na config: {problem}',
     bypass_attempt = 'O jogador {id} ({name}) continuou a conduzir {model} depois de ser parado, por isso foi tirado do veículo.',
 }

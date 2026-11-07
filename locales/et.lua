@@ -49,7 +49,7 @@ Locales.et = {
 
     -- Console
     started = 'Jälgin {count} piiratud sõidukit raamistikuga {framework}.',
-    no_framework = 'Ei qbx_core ega qb-core tööta, seega töö- ja jõugureegleid ei saa kontrollida. ACE ja valge nimekirja reeglid töötavad edasi.',
+    no_framework = 'Ükski raamistik ei tööta (qbx_core, qb-core ega es_extended), seega töö- ja jõugureegleid ei saa kontrollida. ACE ja valge nimekirja reeglid töötavad edasi.',
     config_problem = 'Probleem configis: {problem}',
     bypass_attempt = 'Mängija {id} ({name}) jätkas sõidukiga {model} sõitmist pärast peatamist, seega võeti ta sõidukist välja.',
 }

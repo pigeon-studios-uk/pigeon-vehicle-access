@@ -49,7 +49,7 @@ Locales.da = {
 
     -- Console
     started = 'Overvåger {count} begrænsede køretøjer med {framework}.',
-    no_framework = 'Hverken qbx_core eller qb-core kører, så job- og bande-regler kan ikke tjekkes. ACE- og whitelist-regler virker stadig.',
+    no_framework = 'Intet framework kører (qbx_core, qb-core eller es_extended), så job- og bande-regler kan ikke tjekkes. ACE- og whitelist-regler virker stadig.',
     config_problem = 'Problem i config: {problem}',
     bypass_attempt = 'Spiller {id} ({name}) blev ved med at køre {model} efter at være stoppet, så de blev taget ud af den.',
 }

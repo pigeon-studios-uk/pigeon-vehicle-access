@@ -141,6 +141,8 @@ function Rules.parseWho(text)
     if discord then return { kind = 'discord', value = 'discord:' .. discord } end
     if text:match('^%d+$') and #text <= 6 then return { kind = 'server', value = tonumber(text) } end
     if text:match('^[%w]+$') and #text <= 64 then return { kind = 'citizenid', value = text } end
+    -- ESX character IDs with esx_multicharacter, such as char1:2f8a...
+    if text:match('^char%d+:%w+$') and #text <= 80 then return { kind = 'citizenid', value = text } end
     return nil
 end
 

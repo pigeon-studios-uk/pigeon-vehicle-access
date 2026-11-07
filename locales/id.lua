@@ -49,7 +49,7 @@ Locales.id = {
 
     -- Console
     started = 'Memantau {count} kendaraan terbatas dengan {framework}.',
-    no_framework = 'qbx_core maupun qb-core tidak berjalan, jadi aturan pekerjaan dan geng tidak bisa diperiksa. Aturan ACE dan whitelist tetap berfungsi.',
+    no_framework = 'Tidak ada framework yang berjalan (qbx_core, qb-core, atau es_extended), jadi aturan pekerjaan dan geng tidak bisa diperiksa. Aturan ACE dan whitelist tetap berfungsi.',
     config_problem = 'Masalah config: {problem}',
     bypass_attempt = 'Pemain {id} ({name}) terus mengemudikan {model} setelah dihentikan, jadi mereka dikeluarkan dari kendaraan.',
 }

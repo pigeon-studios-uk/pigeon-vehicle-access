@@ -49,7 +49,7 @@ Locales.sl = {
 
     -- Console
     started = 'Spremljam {count} omejenih vozil z {framework}.',
-    no_framework = 'Ne teče niti qbx_core niti qb-core, zato pravil za službe in tolpe ni mogoče preveriti. Pravila ACE in whitelist še vedno delujejo.',
+    no_framework = 'Ne teče noben framework (qbx_core, qb-core ali es_extended), zato pravil za službe in tolpe ni mogoče preveriti. Pravila ACE in whitelist še vedno delujejo.',
     config_problem = 'Težava v configu: {problem}',
     bypass_attempt = 'Igralec {id} ({name}) je po ustavitvi še naprej vozil {model}, zato je bil odstranjen iz vozila.',
 }

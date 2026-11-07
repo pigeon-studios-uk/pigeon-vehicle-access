@@ -1,8 +1,9 @@
 --[[
     Pigeon Vehicle Access: framework bridge.
 
-    Reads a player's jobs, gang and character identifiers from Qbox (qbx_core) or QBCore (qb-core), in the
-    shape server/rules.lua expects. Add another framework by adding a table with the same functions.
+    Reads a player's jobs, gang and character identifiers from Qbox (qbx_core), QBCore (qb-core) or ESX
+    (es_extended), in the shape server/rules.lua expects. Add another framework by adding a table with the
+    same functions.
 ]]
 
 local Bridge = {}
@@ -57,13 +58,39 @@ local frameworks = {
             return player and fromPlayerData(player.PlayerData) or nil
         end,
     },
+    esx = {
+        resource = 'es_extended',
+        label = 'ESX',
+        player = function(source)
+            local esx = exports.es_extended:getSharedObject()
+            local xPlayer = esx and esx.GetPlayerFromId(source)
+            return xPlayer and Bridge.fromESX(xPlayer) or nil
+        end,
+    },
 }
+
+--- An ESX player in the same shape. ESX has one job and no gangs, and its character ID is xPlayer.identifier
+--- (char1:... with esx_multicharacter). ESX before job duty has no job.onDuty, so everyone counts as on duty.
+function Bridge.fromESX(xPlayer)
+    if type(xPlayer) ~= 'table' then return nil end
+    local job = type(xPlayer.job) == 'table' and xPlayer.job or {}
+    local jobs = {}
+    if job.name then jobs[job.name] = tonumber(job.grade) or 0 end
+    return {
+        citizenid = xPlayer.identifier,
+        jobs = jobs,
+        primaryJob = job.name,
+        onDuty = job.onDuty ~= false,
+        gang = nil,
+        gangGrade = 0,
+    }
+end
 
 local active
 
 --- Picks the running framework. Qbox first, because it also provides qb-core for compatibility.
 function Bridge.detect()
-    for _, key in ipairs({ 'qbx', 'qb' }) do
+    for _, key in ipairs({ 'qbx', 'qb', 'esx' }) do
         if GetResourceState(frameworks[key].resource) == 'started' then
             active = frameworks[key]
             return active.label

@@ -49,7 +49,7 @@ Locales.no = {
 
     -- Console
     started = 'Overvåker {count} begrensede kjøretøy med {framework}.',
-    no_framework = 'Verken qbx_core eller qb-core kjører, så regler for jobber og gjenger kan ikke sjekkes. ACE- og whitelist-regler virker fortsatt.',
+    no_framework = 'Ingen rammeverk kjører (qbx_core, qb-core eller es_extended), så regler for jobber og gjenger kan ikke sjekkes. ACE- og whitelist-regler virker fortsatt.',
     config_problem = 'Problem i config: {problem}',
     bypass_attempt = 'Spiller {id} ({name}) fortsatte å kjøre {model} etter å ha blitt stoppet, så de ble tatt ut av den.',
 }

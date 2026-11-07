@@ -19,7 +19,7 @@ Config.Locale = 'auto'
 --   label     = name shown to players, such as 'Unmarked Scout' (optional)
 --   jobs      = { jobname = lowest grade }. Grade 0 means every grade of that job.
 --   onDuty    = true to also require them to be on duty in that job
---   gangs     = { gangname = lowest grade }
+--   gangs     = { gangname = lowest grade }. Qbox and QBCore only: ESX has no gangs.
 --   ace       = an ACE permission that allows it, such as 'vehicle.heat'
 --   whitelist = true to allow anyone on this vehicle's whitelist (managed with /vehicleaccess add)
 --

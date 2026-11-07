@@ -49,7 +49,7 @@ Locales.sv = {
 
     -- Console
     started = 'Bevakar {count} begränsade fordon med {framework}.',
-    no_framework = 'Varken qbx_core eller qb-core körs, så regler för jobb och gäng kan inte kontrolleras. ACE- och whitelist-regler fungerar fortfarande.',
+    no_framework = 'Inget ramverk körs (qbx_core, qb-core eller es_extended), så regler för jobb och gäng kan inte kontrolleras. ACE- och whitelist-regler fungerar fortfarande.',
     config_problem = 'Problem i config: {problem}',
     bypass_attempt = 'Spelare {id} ({name}) fortsatte köra {model} efter att ha stoppats, så de togs ut ur den.',
 }

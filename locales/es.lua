@@ -49,7 +49,7 @@ Locales.es = {
 
     -- Console
     started = 'Vigilando {count} vehículos restringidos con {framework}.',
-    no_framework = 'No está en marcha ni qbx_core ni qb-core, así que no se pueden comprobar las reglas de trabajos y bandas. Las reglas de ACE y whitelist siguen funcionando.',
+    no_framework = 'No hay ningún framework en marcha (qbx_core, qb-core o es_extended), así que no se pueden comprobar las reglas de trabajos y bandas. Las reglas de ACE y whitelist siguen funcionando.',
     config_problem = 'Problema en la config: {problem}',
     bypass_attempt = 'El jugador {id} ({name}) siguió conduciendo {model} después de ser detenido, así que se le sacó del vehículo.',
 }

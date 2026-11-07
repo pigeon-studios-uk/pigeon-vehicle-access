@@ -49,7 +49,7 @@ Locales['zh-cn'] = {
 
     -- Console
     started = '正在通过 {framework} 监视 {count} 辆受限车辆。',
-    no_framework = 'qbx_core 和 qb-core 都没有运行，所以无法检查职业和帮派规则。ACE 和白名单规则仍然有效。',
+    no_framework = '没有运行任何框架（qbx_core、qb-core 或 es_extended），所以无法检查职业和帮派规则。ACE 和白名单规则仍然有效。',
     config_problem = '配置问题：{problem}',
     bypass_attempt = '玩家 {id}（{name}）被拦下后仍继续驾驶 {model}，所以已被移出车辆。',
 }

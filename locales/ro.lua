@@ -49,7 +49,7 @@ Locales.ro = {
 
     -- Console
     started = 'Se urmăresc {count} vehicule restricționate cu {framework}.',
-    no_framework = 'Nu rulează nici qbx_core, nici qb-core, așa că regulile pentru joburi și bande nu pot fi verificate. Regulile ACE și whitelist funcționează în continuare.',
+    no_framework = 'Nu rulează niciun framework (qbx_core, qb-core sau es_extended), așa că regulile pentru joburi și bande nu pot fi verificate. Regulile ACE și whitelist funcționează în continuare.',
     config_problem = 'Problemă în config: {problem}',
     bypass_attempt = 'Jucătorul {id} ({name}) a continuat să conducă {model} după ce a fost oprit, așa că a fost scos din vehicul.',
 }

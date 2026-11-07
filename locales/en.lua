@@ -48,7 +48,7 @@ Locales.en = {
 
     -- Console
     started = 'Watching {count} restricted vehicles with {framework}.',
-    no_framework = 'Neither qbx_core nor qb-core is running, so job and gang rules can\'t be checked. ACE and whitelist rules still work.',
+    no_framework = 'No framework is running (qbx_core, qb-core or es_extended), so job and gang rules can\'t be checked. ACE and whitelist rules still work.',
     config_problem = 'Config problem: {problem}',
     bypass_attempt = 'Player {id} ({name}) kept driving {model} after being stopped, so they were taken out of it.',
 }

@@ -49,7 +49,7 @@ Locales.it = {
 
     -- Console
     started = 'Controllo di {count} veicoli riservati con {framework}.',
-    no_framework = 'Né qbx_core né qb-core sono attivi, quindi le regole su lavori e gang non possono essere controllate. Le regole ACE e whitelist funzionano ancora.',
+    no_framework = 'Nessun framework è attivo (qbx_core, qb-core o es_extended), quindi le regole su lavori e gang non possono essere controllate. Le regole ACE e whitelist funzionano ancora.',
     config_problem = 'Problema nella config: {problem}',
     bypass_attempt = 'Il giocatore {id} ({name}) ha continuato a guidare {model} dopo essere stato fermato, quindi è stato fatto scendere.',
 }

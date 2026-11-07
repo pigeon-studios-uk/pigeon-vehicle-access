@@ -49,7 +49,7 @@ Locales.hu = {
 
     -- Console
     started = '{count} korlátozott jármű figyelése ezzel: {framework}.',
-    no_framework = 'Sem a qbx_core, sem a qb-core nem fut, így a munka- és bandaszabályok nem ellenőrizhetők. Az ACE és az engedélyezett lista szabályai továbbra is működnek.',
+    no_framework = 'Nem fut framework (qbx_core, qb-core vagy es_extended), így a munka- és bandaszabályok nem ellenőrizhetők. Az ACE és az engedélyezett lista szabályai továbbra is működnek.',
     config_problem = 'Hiba a configban: {problem}',
     bypass_attempt = 'A(z) {id} játékos ({name}) a megállítás után is tovább vezette ezt: {model}, ezért kivették belőle.',
 }

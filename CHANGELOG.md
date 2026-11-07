@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- ESX support. Job rules, grades and `onDuty` now work with es_extended, alongside Qbox and QBCore. ESX has no gangs, so gang rules still need Qbox or QBCore.
+- Whitelists accept ESX character identifiers, such as `char1:2f8a…`, and a server ID whitelists an ESX player's current character.
+
 ## [1.1.0] - 2026-11-07
 
 ### Added

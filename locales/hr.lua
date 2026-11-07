@@ -49,7 +49,7 @@ Locales.hr = {
 
     -- Console
     started = 'Pratim {count} ograničenih vozila uz {framework}.',
-    no_framework = 'Ne radi ni qbx_core ni qb-core, pa se pravila za poslove i bande ne mogu provjeriti. ACE i whitelist pravila i dalje rade.',
+    no_framework = 'Ne radi nijedan framework (qbx_core, qb-core ili es_extended), pa se pravila za poslove i bande ne mogu provjeriti. ACE i whitelist pravila i dalje rade.',
     config_problem = 'Problem u configu: {problem}',
     bypass_attempt = 'Igrač {id} ({name}) nastavio je voziti {model} nakon što je zaustavljen, pa je izbačen iz vozila.',
 }

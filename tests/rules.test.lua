@@ -110,6 +110,8 @@ check('citizen ID', who('ABC12345') == 'citizenid=ABC12345')
 check('discord ID', who('discord:123456789012345678') == 'discord=discord:123456789012345678')
 check('rubbish rejected', who('drop table;') == 'nil' and who('') == 'nil' and who('discord:abc') == 'nil')
 check('long numbers are citizen IDs, not server IDs', who('12345678') == 'citizenid=12345678')
+check('ESX character identifiers', who('char1:2f8ab3c4') == 'citizenid=char1:2f8ab3c4')
+check('other prefixed identifiers are still refused', who('license:abc') == 'nil' and who('char:abc') == 'nil')
 
 check('rules exposed as VehicleAccessRules', VehicleAccessRules == Rules)
 
