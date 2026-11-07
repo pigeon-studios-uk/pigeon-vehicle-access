@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-07
+
 ### Added
 
 - 22 more languages, so it now comes in 23: Czech, Danish, German, Spanish, Estonian, Finnish, French, Croatian, Hungarian, Indonesian, Italian, Dutch, Norwegian, Polish, Portuguese, Brazilian Portuguese, Romanian, Slovenian, Swedish, Turkish, and Simplified and Traditional Chinese.
@@ -53,6 +55,7 @@ First release. Pigeon Vehicle Access replaces Vehicle Lock (`vehicle-lock`).
 - Whitelists use the standard oxmysql. Vehicle Lock needed a renamed copy of it.
 - Vehicles are made driveable again when a stopped player gets out. In Vehicle Lock they could stay undriveable for the next driver.
 
-[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/tag/v1.1.0
 [1.0.1]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/tag/v1.0.1
 [1.0.0]: https://github.com/pigeon-studios-uk/pigeon-vehicle-access/releases/tag/v1.0.0
